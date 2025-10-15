@@ -1,29 +1,21 @@
 
-    
-function sum(num)
-{
-    let sum = 0;
-    let res = 0;
-    while(num > 0)
-    {
-        res = num % 10;
-        sum += res * res;
-        num = Math.floor(num / 10);
-    }
-    
-    return sum;
-}    
+let digits = [1,2,3];
 
-function foo(num) {
-    let a = sum(num);
- 
-    while(a !== 1 && a !== 37)
-    {
-        a = sum(a);
-    }
-    return a === 1;
+function foo(digits)
+{
+    let size = digits.length - 1;
     
-     
+    for(let i = size; i >= 0; i--)
+    {
+        if(digits[i] < 9)
+        {
+            digits[i]++;
+            return digits;
+        }
+        digits[i] = 0;
+    }
+    digits.unshift(1);
+    return digits;
 }
 
-console.log(foo(19));
+console.log(foo(digits));
