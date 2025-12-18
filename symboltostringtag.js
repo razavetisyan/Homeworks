@@ -1,6 +1,6 @@
 
 class Collection{
-     [Symbol.toStringTag] = "masnaget";
+     [Symbol.toStringTag] = "Collection";
 }
 
 let obj = new Collection();
